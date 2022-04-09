@@ -31,6 +31,7 @@ In the left scrollviewer we can see all transactions that we made.
 ![9](https://user-images.githubusercontent.com/91193062/162591210-15239a7e-5c81-444f-bb52-e33e30f0ea97.PNG)
 If we want to see products amount change in individual transaction just double click it s date textbox.
 We can see transactions details in second scrollviewer.
+
 Supply
 ![10](https://user-images.githubusercontent.com/91193062/162591276-1382bde9-d928-46e1-8154-41e176705253.PNG)
 Sell
