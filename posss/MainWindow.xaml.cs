@@ -101,13 +101,19 @@ namespace posss
             {
                 string hr = "";
                 string min = "";
+                string day = "";
+                string mon = "";
+                if (transakcje[x].Date.Month < 10)
+                { mon = "0"; }
+                if (transakcje[x].Date.Day < 10)
+                { day = "0"; }
                 if (transakcje[x].Date.Hour<10)
                 { hr = "0"; }
                 if (transakcje[x].Date.Minute < 10)
                 { min = "0"; }
                 int param = x;
                 InLoop.AStPa(a.b[0], Orientation.Horizontal);
-                a.ATxBo(InLoop.b[x], 25, 150, new Thickness(20, 10, 0, 0), true, Convert.ToString(transakcje[x].Date.Year)+" 0"+ Convert.ToString(transakcje[x].Date.Month+" 0"+ Convert.ToString(transakcje[x].Date.Day)+" "+hr+ Convert.ToString(transakcje[x].Date.Hour)+":")+min+ Convert.ToString(transakcje[x].Date.Minute));
+                a.ATxBo(InLoop.b[x], 25, 150, new Thickness(20, 10, 0, 0), true, Convert.ToString(transakcje[x].Date.Year)+" "+mon+ Convert.ToString(transakcje[x].Date.Month+" "+day+ Convert.ToString(transakcje[x].Date.Day)+" "+hr+ Convert.ToString(transakcje[x].Date.Hour)+":")+min+ Convert.ToString(transakcje[x].Date.Minute));
                 a.ATxBo(InLoop.b[x], 25, 80, new Thickness(0, 10, 0, 0), true, transakcje[x].typ);
                 a.c[y].MouseDoubleClick += new MouseButtonEventHandler((sender, e) => { Hist(sender, e, param, a.b[3]); });
                 a.c[y+1].MouseDoubleClick += new MouseButtonEventHandler((sender, e) => { Hist(sender, e, param, a.b[3]); });
