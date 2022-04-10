@@ -11,7 +11,7 @@ namespace posss
         public DbSet<Transakcja> Transakcje { get; set; }
 
         public string DbPath { get; private set; }
-        private static bool _created = false;
+        
         
 
         public Model()
@@ -19,12 +19,8 @@ namespace posss
             var folder = Environment.SpecialFolder.LocalApplicationData;
             var path = Environment.GetFolderPath(folder);
             DbPath = $"{path}{System.IO.Path.DirectorySeparatorChar}produkty.db";
-            if (!_created)
-            {
-                _created = true;
-                Database.EnsureDeleted();
-                Database.EnsureCreated();
-            }
+            Database.EnsureCreated();
+            
         }
         protected override void OnConfiguring(DbContextOptionsBuilder options)
             => options.UseSqlite($"Data Source={DbPath}");
